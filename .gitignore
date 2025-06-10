@@ -1,0 +1,12 @@
+# Node modules
+node_modules/
+
+# Prisma migrations (keep SQL, but ignore the rest)
+prisma/migrations/*
+!prisma/migrations/*/*.sql
+
+# Compiled output
+dist/
+
+# Environment
+.env
