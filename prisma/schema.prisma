@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js" 
+}
+
+datasource db {
+  provider = "postgresql"         // using Postgres as our database
+  url      = env("DATABASE_URL")  // connection string from env vars
+}
+
+enum LinkPrecedence {
+  primary                        // first/original contact in a cluster
+  secondary                      // linked follow-up contacts
+}
+
+model Contact {
+  id             Int            @id @default(autoincrement()) 
+  phoneNumber    String?                                   
+  email          String?                                   
+  linkedId       Int?                                      
+  linkPrecedence LinkPrecedence @default(primary)          
+  createdAt      DateTime       @default(now())            
+  updatedAt      DateTime       @updatedAt                 
+  deletedAt      DateTime?                                  
+
+  @@index([email])                                      // speed lookups by email
+  @@index([phoneNumber])                                // speed lookups by phone
+  @@index([linkedId])                                   // speed finding secondaries
+  @@unique([email, phoneNumber])                        // prevent exact dupes, allows NULLs
+}
+
+
+
+
