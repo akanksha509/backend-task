@@ -2,11 +2,11 @@
 
 A robust Node.js web service that intelligently links customer contact information across multiple purchases, helping e-commerce platforms provide personalized experiences while maintaining customer privacy.
 
-## 🎯 Problem Statement
+##  Problem Statement
 
 Meet Dr. Emmett Brown (Doc), who uses different email addresses and phone numbers for each purchase on FluxKart.com to avoid drawing attention to his time machine project. FluxKart needs to identify that all these different contact details belong to the same customer for personalized experiences.
 
-## 🚀 Solution Overview
+##  Solution Overview
 
 This service provides an `/identify` endpoint that:
 
@@ -15,7 +15,7 @@ This service provides an `/identify` endpoint that:
 - Handles complex scenarios like merging separate contact clusters
 - Ensures data consistency under concurrent requests
 
-## ✨ Features
+##  Features
 
 | Feature | Description |
 |---------|-------------|
@@ -27,7 +27,7 @@ This service provides an `/identify` endpoint that:
 | **Concurrency-safe** | Handles race conditions and concurrent requests |
 | **Data Normalization** | Consistent email and phone number formatting |
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 backend-task/
@@ -53,7 +53,7 @@ backend-task/
 └── README.md
 ```
 
-## 🗄️ Database Schema
+##  Database Schema
 
 ```prisma
 model Contact {
@@ -78,7 +78,7 @@ enum LinkPrecedence {
 }
 ```
 
-## 🛠️ Local Setup
+##  Local Setup
 
 ### Prerequisites
 
@@ -140,7 +140,7 @@ npm run dev
 curl http://localhost:3000/health
 ```
 
-## 📊 API Documentation
+## API Documentation
 
 ### POST /identify
 
@@ -196,7 +196,7 @@ curl -X POST http://localhost:3000/identify \
 
 Health check endpoint to verify service and database connectivity.
 
-## 🧪 Testing
+## Testing
 
 The service includes comprehensive test suites covering various scenarios:
 
@@ -216,7 +216,7 @@ npm test
 | **Edge Cases** | Concurrent request handling, International phone formats, Race condition prevention, Transaction rollbacks |
 | **Advanced Scenarios** | Multi-cluster merging, Email-only duplicate handling, Maintaining oldest contact as primary |
 
-## 🔧 Edge Cases Handled
+## Edge Cases Handled
 
 ### 1. Primary Contact Demotion
 
@@ -288,7 +288,7 @@ Prevents creation of unnecessary secondary contacts when:
 // 3. Request contains no new information
 ```
 
-## 🔧 Technical Implementation Details
+## Technical Implementation Details
 
 ### Solution Approach
 
@@ -326,7 +326,7 @@ Prevents creation of unnecessary secondary contacts when:
 - **Helmet Middleware**: Security headers
 - **Input Validation**: Comprehensive request validation
 
-## 🔍 Testing Strategy
+## Testing Strategy
 
 ### Test Coverage Includes:
 
@@ -336,32 +336,6 @@ Prevents creation of unnecessary secondary contacts when:
 | **Integration Tests** | Database operations, Transaction handling, Constraint violations |
 | **End-to-End Scenarios** | Complete user workflows, Complex multi-step scenarios, Real-world edge cases |
 | **Performance Tests** | Concurrent request handling, Large dataset operations, Memory usage optimization |
-
-## 💡 Future Improvements
-
-### Scalability Enhancements
-
-- Implement caching layer (Redis)
-- Add connection pooling optimization
-- Pagination for large contact clusters
-
-### Monitoring & Observability
-
-- Prometheus metrics endpoint
-- Detailed logging with correlation IDs
-- Distributed tracing integration
-
-### Advanced Features
-
-- Fuzzy matching for similar emails/phones
-- Machine learning for contact similarity
-- Audit trail for all contact changes
-
-### Performance Optimizations
-
-- Background job processing for heavy operations
-- Read replicas for query optimization
-- Materialized views for complex queries
 
 
 **Live Endpoint**: `https://your-backend-task.onrender.com/identify` *(Replace with your actual deployment URL)*
