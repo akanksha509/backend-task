@@ -13,7 +13,7 @@ A robust Node.js web service that intelligently links customer contact informati
 
 ---
 
-### 🔬 Quick-test in Postman
+### Quick-test in Postman
 
 1. **Create a new POST request**
    *URL*: https://backend-task-ilz9.onrender.com/identify
@@ -45,8 +45,6 @@ A robust Node.js web service that intelligently links customer contact informati
 
 5. **Health-check**
    Create a `GET` request to `https://backend-task-ilz9.onrender.com/health` and verify it returns JSON `{ "status": "ok", ... }`.
-
-*(No extra auth, params, or headers are required.)*
 
 **Note:** Hitting the base URL `/` or a `GET /identify` will show "Cannot GET" — only the endpoints listed above are exposed.
 
