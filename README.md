@@ -2,6 +2,8 @@
 
 A robust Node.js web service that intelligently links customer contact information across multiple purchases, helping e-commerce platforms provide personalized experiences while maintaining customer privacy.
 
+**Live Endpoint**: https://backend-task-ilz9.onrender.com/identify
+
 ##  Problem Statement
 
 Meet Dr. Emmett Brown (Doc), who uses different email addresses and phone numbers for each purchase on FluxKart.com to avoid drawing attention to his time machine project. FluxKart needs to identify that all these different contact details belong to the same customer for personalized experiences.
@@ -336,7 +338,3 @@ Prevents creation of unnecessary secondary contacts when:
 | **Integration Tests** | Database operations, Transaction handling, Constraint violations |
 | **End-to-End Scenarios** | Complete user workflows, Complex multi-step scenarios, Real-world edge cases |
 | **Performance Tests** | Concurrent request handling, Large dataset operations, Memory usage optimization |
-
-
-**Live Endpoint**: `https://your-backend-task.onrender.com/identify` *(Replace with your actual deployment URL)*
-
